@@ -42,6 +42,11 @@ docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 # Connect to the Internet -Front End Part
 
 
+ ## Screenshots
+
+![Screenshot 1](springboot-react-frontend/screenshots/Capture.JPG)
+![Screenshot 2](springboot-react-frontend/screenshots/Capture1.JPG)
+
 ## How to boot up this application  
 In the project directory, you can run:
 

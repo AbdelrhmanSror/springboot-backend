@@ -50,7 +50,7 @@ docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 ## How to boot up this application  
 In the project directory, you can run:
 
-### `npm start`
+### `npm run start`
 
 * Runs the app in the development mode.
 * Open [http://localhost:3000](http://localhost:3000) to view it in the browser.

@@ -11,9 +11,9 @@
  
  ## Screenshots
 
-![Screenshot 1](springboot-backend/screenshots/spring_app_run.JPG)
-![Screenshot 2](springboot-backend/screenshots/running_1.JPG)
-![Screenshot 3](springboot-backend/screenshots/running_2.JPG)
+![Screenshot 1](screenshots/spring_app_run.JPG)
+![Screenshot 2](screenshots/running_1.JPG)
+![Screenshot 3](screenshots/running_2.JPG)
 
 
 

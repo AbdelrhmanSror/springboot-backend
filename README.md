@@ -29,9 +29,13 @@ https://github.com/AbdelrhmanSror/android-customer-api/blob/ba264c3debe9fbbb6351
 * run the application
 
 * if you are going to run the docker file map it to port 8090
-* link of the project on dockerHub.
+
+# link of the project on dockerHub.
   
-  https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot
+  https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot .
+  
+# command to run docker file.
+docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 
 
 # Connect to the Internet -Front End Part

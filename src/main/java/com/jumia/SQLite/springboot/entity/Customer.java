@@ -1,5 +1,7 @@
 package com.jumia.SQLite.springboot.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 
 
@@ -14,6 +16,10 @@ public class Customer {
     private String name;
     @Column(name = "phone")
     private String phoneNumber;
+    private String country;
+    @JsonIgnore
+    private String countryCodeNumber;
+
 
     public Customer() {
     }
@@ -22,10 +28,9 @@ public class Customer {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
@@ -40,6 +45,10 @@ public class Customer {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public String getCountry() {
+        return CountryCode.getCountry(getCountryCodeNumber()).name();
     }
 
     public String getCountryCodeNumber() {

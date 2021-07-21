@@ -11,9 +11,9 @@
  
  ## Screenshots
 
-![Screenshot 1](SQLite.springboot-master/screenshots/spring_app_run.JPG)
-![Screenshot 2](SQLite.springboot-master/screenshots/running_1.JPG)
-![Screenshot 3](SQLite.springboot-master/screenshots/running_2.JPG)
+![Screenshot 1](springboot-backend/screenshots/spring_app_run.JPG)
+![Screenshot 2](springboot-backend/screenshots/running_1.JPG)
+![Screenshot 3](springboot-backend/screenshots/running_2.JPG)
 
 
 

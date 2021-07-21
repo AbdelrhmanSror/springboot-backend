@@ -11,9 +11,9 @@
  
  ## Screenshots
 
-![Screenshot 1](SQLite.springboot-master/screenshots/spring_app_run.JPG)
-![Screenshot 2](SQLite.springboot-master/screenshots/running_1.JPG)
-![Screenshot 3](SQLite.springboot-master/screenshots/running_2.JPG)
+![Screenshot 1](screenshots/spring_app_run.JPG)
+![Screenshot 2](screenshots/running_1.JPG)
+![Screenshot 3](screenshots/running_2.JPG)
 
 
 
@@ -23,12 +23,18 @@
 ## How to boot up this application  
 * go to the file SQLite.springboot-master and load the file on Inteliji IDE  or any prefered IDE .
 
-
-https://github.com/AbdelrhmanSror/android-customer-api/blob/ba264c3debe9fbbb6351bad4c48f471bb0d316b2/SQLite.springboot-master/src/main/java/com/jumia/SQLite/springboot/SpringBootAndSqLiteApplication.java
+https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e286b7c6d92d10433a5/src/main/java/com/jumia/SQLite/springboot/SpringBootAndSqLiteApplication.java
 
 * run the application
 
 * if you are going to run the docker file map it to port 8090
+
+# link of the project on dockerHub.
+  
+  https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot .
+  
+# command to run docker file.
+docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 
 
 # Connect to the Internet -Front End Part

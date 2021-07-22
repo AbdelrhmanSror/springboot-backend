@@ -23,7 +23,7 @@
 
  
 ## How to boot up this application  
-* go to the file SQLite.springboot-master and load the file on Inteliji IDE  or any prefered IDE .
+* load the file on Inteliji IDE  or any prefered IDE .
 
 https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e286b7c6d92d10433a5/src/main/java/com/jumia/SQLite/springboot/SpringBootAndSqLiteApplication.java
 

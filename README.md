@@ -23,18 +23,18 @@
 
  
 ## How to boot up this application  
-* go to the file SQLite.springboot-master and load the file on Inteliji IDE  or any prefered IDE .
+* load the file on Inteliji IDE  or any prefered IDE .
 
 https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e286b7c6d92d10433a5/src/main/java/com/jumia/SQLite/springboot/SpringBootAndSqLiteApplication.java
 
 * run the application
 
-### running docker file
+# running docker file
 
-# link of the project on dockerHub.
+## link of the project on dockerHub.
   https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot .
   
-# command to run docker file.
+### command to run docker file.
 * if you are going to run the docker file map it to port 8090
 
   docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
@@ -60,12 +60,12 @@ then
 * The page will reload if you make edits.
 * run the application.
 
-### running docker file
+# running docker file
 
-# link of the project on dockerHub.
+## link of the project on dockerHub.
 https://hub.docker.com/repository/docker/sror12347/springboot-frontend
   
-# command to run docker file.
+### command to run docker file.
 * if you are going to run the docker file map it to port 3000
 
   docker run -p 3000:3000 sror12347/springboot-frontend

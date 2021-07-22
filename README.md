@@ -67,8 +67,8 @@ https://hub.docker.com/repository/docker/sror12347/springboot-frontend
   
 # command to run docker file.
 * if you are going to run the docker file map it to port 3000
-* 
-docker run -p 3000:3000 sror12347/springboot-frontend
+
+  docker run -p 3000:3000 sror12347/springboot-frontend
 
 ### ENJOY
 

@@ -46,13 +46,10 @@ public class CustomerService {
     // 0 consider as not valid
     // any number other than 0 consider as valid
     private List<Customer> getCustomersWithValidNotValidState(int state) {
-        switch (state) {
-            case State.NOT_VALID:
-                return getCustomersWithNotValidState();
-            case State.VALID:
-                return getCustomersWithValidState();
-            default:
-                return null;
+        if (state == State.NOT_VALID) {
+            return getCustomersWithNotValidState();
+        } else {
+            return getCustomersWithValidState();
         }
 
 

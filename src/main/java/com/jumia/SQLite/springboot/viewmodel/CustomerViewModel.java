@@ -12,7 +12,7 @@ import java.util.List;
  * class responsible for controlling the server he is acting as mediator between server and client
  */
 @RestController
-@CrossOrigin("*")
+@CrossOrigin(origins = "*")
 public class CustomerViewModel {
 
     @Autowired

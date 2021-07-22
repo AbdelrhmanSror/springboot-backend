@@ -29,8 +29,9 @@ public class CustomerService {
     public List<Customer> getFilteredCustomers(String countryCode, int state) {
         List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(state);
         Country country = CountryCode.getCountry(countryCode);
+        //for case if user enter invalid code number we just return the customers that match the state.
         if (isNotValidCountry(country)) return customersMatchTheState;
-        return getCustomersWithSameCountryCode(customersMatchTheState, CountryCode.getCountry(countryCode).getCountryCodeRegex());
+        return getCustomersWithSameCountryCode(customersMatchTheState, country.getCountryCodeRegex());
 
     }
 
@@ -45,10 +46,13 @@ public class CustomerService {
     // 0 consider as not valid
     // any number other than 0 consider as valid
     private List<Customer> getCustomersWithValidNotValidState(int state) {
-        if (state == State.NOT_VALID) {
-            return getCustomersWithNotValidState();
-        } else {
-            return getCustomersWithValidState();
+        switch (state) {
+            case State.NOT_VALID:
+                return getCustomersWithNotValidState();
+            case State.VALID:
+                return getCustomersWithValidState();
+            default:
+                return null;
         }
 
 

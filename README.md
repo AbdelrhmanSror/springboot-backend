@@ -72,5 +72,3 @@ https://hub.docker.com/repository/docker/sror12347/springboot-frontend
 
 ### ENJOY
 
-## Report Issues
-Notice any issues with a repository? Please file a github issue in the repository.

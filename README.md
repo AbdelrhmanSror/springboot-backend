@@ -29,13 +29,14 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
 
 * run the application
 
-* if you are going to run the docker file map it to port 8090
+### running docker file
 
 # link of the project on dockerHub.
-  
   https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot .
   
 # command to run docker file.
+* if you are going to run the docker file map it to port 8090
+* 
 docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 
 
@@ -59,7 +60,17 @@ then
 * The page will reload if you make edits.
 * run the application.
 
+### running docker file
 
+# link of the project on dockerHub.
+https://hub.docker.com/repository/docker/sror12347/springboot-frontend
+  
+# command to run docker file.
+* if you are going to run the docker file map it to port 3000
+* 
+docker run -p 3000:3000 sror12347/springboot-frontend
+
+### ENJOY
 
 ## Report Issues
 Notice any issues with a repository? Please file a github issue in the repository.

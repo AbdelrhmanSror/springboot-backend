@@ -36,8 +36,8 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
   
 # command to run docker file.
 * if you are going to run the docker file map it to port 8090
-* 
-docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
+
+  docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 
 
 # Connect to the Internet -Front End Part

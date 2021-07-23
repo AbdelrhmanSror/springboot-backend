@@ -1,10 +1,10 @@
 import './App.css';
-import CountryDropDownComponent from './component/CountryDropDownComponent'
+import MainComponent from './component/MainComponent'
 
 function App() {
   return (
     <div className="App">
-    <CountryDropDownComponent/>
+    <MainComponent/>
     </div>
   );
 }

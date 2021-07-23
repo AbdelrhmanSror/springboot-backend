@@ -35,13 +35,6 @@ public class CustomerService {
 
     }
 
-    private boolean isNotValidCountry(Country country) {
-        return country == null;
-    }
-
-    private boolean isValidCountry(Country country) {
-        return country != null;
-    }
 
     // 0 consider as not valid
     // any number other than 0 consider as valid
@@ -83,20 +76,30 @@ public class CustomerService {
         return CountryCode.getCountry(customerCountryCodeNumber);
     }
 
-
-    //here we check for all customers that their country code is match the selected countryPhoneRegex
-    // (237) match \(237\)\
-    private List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
-        return customers.stream().filter(customer -> isMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
-
-    }
-
     private Boolean isCustomerPhoneNumberValid(String phoneNumberRegex, String phoneNumber) {
         return isMatchingRegex(phoneNumberRegex, phoneNumber);
     }
 
     private Boolean isCustomerPhoneNumberNotValid(String phoneNumberRegex, String phoneNumber) {
         return !isMatchingRegex(phoneNumberRegex, phoneNumber);
+    }
+
+    private boolean isNotValidCountry(Country country) {
+        return country == null;
+    }
+
+    private boolean isValidCountry(Country country) {
+        return country != null;
+    }
+
+
+
+
+    //here we check for all customers that their country code is match the selected countryPhoneRegex
+    // (237) match \(237\)\
+    private List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
+        return customers.stream().filter(customer -> isMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
+
     }
 
 

@@ -36,8 +36,14 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
   
 ### command to run docker file.
 * if you are going to run the docker file map it to port 8090
-
+* pull the repo from docker hub
+  docker pull sror12347/customer-sql-springboot:v1
+* run it 
   docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
+  
+  ### Running on docker Desktop.
+![Screenshot 1](screenshots/docker1.JPG)
+
 
 
 # Connect to the Internet -Front End Part
@@ -68,8 +74,15 @@ https://hub.docker.com/repository/docker/sror12347/springbootreactfrontend
 
 ### command to run docker file.
 * if you are going to run the docker file map it to port 3000
+* pull the repo from docker hub
+   docker pull sror12347/springbootreactfrontend
+* run it 
+  docker run -p 3000:3000 sror12347/springbootreactfrontend
+  
+  
+ ### Running on docker Desktop.
+![Screenshot 1](screenshots/docker2.JPG)
 
-  docker run -p 3000:3000 sror12347/springboot-frontend
 
 ### ENJOY
 

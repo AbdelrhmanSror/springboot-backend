@@ -45,7 +45,7 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
   docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
   
   ### Running on docker Desktop.
-![Screenshot 1](screenshots/docker1.JPG)
+![Screenshot 1](springboot-react-frontend/screenshots/docker1.JPG)
 
 
 
@@ -87,7 +87,7 @@ https://hub.docker.com/repository/docker/sror12347/springbootreactfrontend
   
   
  ### Running on docker Desktop.
-![Screenshot 1](screenshots/docker2.JPG)
+![Screenshot 1](springboot-react-frontend/screenshots/docker2.JPG)
 
 
 ### ENJOY

@@ -63,8 +63,9 @@ then
 # running docker file
 
 ## link of the project on dockerHub.
-https://hub.docker.com/repository/docker/sror12347/springboot-frontend
-  
+
+https://hub.docker.com/repository/docker/sror12347/springbootreactfrontend 
+
 ### command to run docker file.
 * if you are going to run the docker file map it to port 3000
 

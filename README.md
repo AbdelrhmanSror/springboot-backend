@@ -45,15 +45,15 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
   
    docker run -p 8090:8090 customer-sql-springboot:v1
   
-  ### Running on docker Desktop.
+ ### Running on docker Desktop.
   
  * pull the repo from docker hub.
 
-  docker pull sror12347/customer-sql-springboot:v1
+   docker pull sror12347/customer-sql-springboot:v1
   
  * run it.
  
-  docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
+   docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
 
   
 ![Screenshot 1](springboot-react-frontend/screenshots/docker1.JPG)

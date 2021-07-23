@@ -27,7 +27,7 @@ public enum Country {
     // enum constructor - cannot be public or protected
     private Country(String phoneNumberRegex) {
         this.phoneNumberRegex = phoneNumberRegex;
-        this.countryCodeRegex=phoneNumberRegex.substring(2, 5);
+        this.countryCodeRegex = CountryCode.getCountryCodeNumberRegex(phoneNumberRegex);
     }
 
 

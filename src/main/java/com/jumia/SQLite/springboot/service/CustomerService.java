@@ -29,7 +29,7 @@ public class CustomerService {
     public List<Customer> getFilteredCustomers(String countryCode, int state) {
         List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(state);
         Country country = CountryCode.getCountry(countryCode);
-        //for case if user enter invalid code number we just return the customers that match the state.
+        //for case if user enter invalid code number we just return All  customers that match the state.
         if (isNotValidCountry(country)) return customersMatchTheState;
         return getCustomersWithSameCountryCode(customersMatchTheState, country.getCountryCodeRegex());
 
@@ -79,7 +79,7 @@ public class CustomerService {
     }
 
     private Country getCountry(Customer customer) {
-        String customerCountryCodeNumber = customer.getCountryCodeNumber();
+        String customerCountryCodeNumber = CountryCode.getCountryCodeNumber(customer.getPhoneNumber());
         return CountryCode.getCountry(customerCountryCodeNumber);
     }
 
@@ -87,7 +87,7 @@ public class CustomerService {
     //here we check for all customers that their country code is match the selected countryPhoneRegex
     // (237) match \(237\)\
     private List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
-        return customers.stream().filter(customer -> isMatchingRegex(countryCodeRegex, customer.getCountryCodeNumber())).collect(Collectors.toList());
+        return customers.stream().filter(customer -> isMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
 
     }
 

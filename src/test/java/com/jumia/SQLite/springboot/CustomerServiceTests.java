@@ -85,16 +85,15 @@ public class CustomerServiceTests {
     }
 
     private Country getCountry(Customer customer) {
-        String customerCountryCodeNumber = customer.getCountryCodeNumber();
+        String customerCountryCodeNumber = CountryCode.getCountryCodeNumber(customer.getPhoneNumber());
         return CountryCode.getCountry(customerCountryCodeNumber);
     }
-
 
 
     //here we check for all customers that their country code is match the selected countryPhoneRegex
     // (237) match \(237\)\
     private List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
-        return customers.stream().filter(customer -> isCustomerMatchingRegex(countryCodeRegex, customer.getCountryCodeNumber())).collect(Collectors.toList());
+        return customers.stream().filter(customer -> isCustomerMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
 
     }
 

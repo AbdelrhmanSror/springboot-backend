@@ -1,7 +1,5 @@
 package com.jumia.SQLite.springboot.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import javax.persistence.*;
 
 
@@ -17,8 +15,6 @@ public class Customer {
     @Column(name = "phone")
     private String phoneNumber;
     private String country;
-    @JsonIgnore
-    private String countryCodeNumber;
 
 
     public Customer() {
@@ -31,6 +27,7 @@ public class Customer {
     public void setId(int id) {
         this.id = id;
     }
+
     public String getName() {
         return name;
     }
@@ -48,16 +45,10 @@ public class Customer {
     }
 
     public String getCountry() {
-        return CountryCode.getCountry(getCountryCodeNumber()).name();
+        country = CountryCode.getCountry(CountryCode.getCountryCodeNumber(phoneNumber)).name();
+        return country;
     }
 
-    public String getCountryCodeNumber() {
-        try {
-            return phoneNumber.substring(1, 4);
-        } catch (IndexOutOfBoundsException exception) {
-            return null;
-        }
-    }
 
     @Override
     public String toString() {
@@ -65,6 +56,7 @@ public class Customer {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
+                ", country='" + country + '\'' +
                 '}';
     }
 }

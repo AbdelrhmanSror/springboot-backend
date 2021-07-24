@@ -23,14 +23,7 @@ public class CustomerServiceUtility {
 
     }
 
-    /**
-     * here we check for all customers that their country code is match the selected countryCode
-     * (237) match \(237\)\
-     *
-     * @param customers   to filter based on the given  countryCode
-     * @param countryCode to filter customers based on it
-     * @return countryCode based  filtered customers
-     */
+    
     public static List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCode) {
         //for case if user enter invalid code number we just return All  customers that match the state.
         if (CountryCode.isNotExist(countryCode)) return customers;

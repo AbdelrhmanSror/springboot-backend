@@ -12,9 +12,9 @@ import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabas
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
+
+import static com.jumia.SQLite.springboot.service.CustomerServiceUtility.getCustomersWithSameCountryCode;
+import static com.jumia.SQLite.springboot.service.CustomerServiceUtility.getCustomersWithValidNotValidState;
 
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.NONE)
@@ -41,75 +41,12 @@ public class CustomerServiceTests {
     //second we filter all number that match the country code number regex
     @Test
     public void getFilteredCustomerUsingPhoneNumber() {
-        List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(State.VALID);
+        List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(customerDao.findAll(), State.VALID);
         Country country = CountryCode.getCountry("5");
         if (country == null) testReadCustomers();
         else
             assertAndPrint(getCustomersWithSameCountryCode(customersMatchTheState, CountryCode.getCountry("5").getCountryCodeRegex()));
 
-    }
-
-    // 0 consider as not valid
-    // any number other than 0 consider as valid
-    private List<Customer> getCustomersWithValidNotValidState(int state) {
-        if (state == State.NOT_VALID) {
-            return getCustomersWithNotValidState();
-        } else {
-            return getCustomersWithValidState();
-        }
-
-
-    }
-
-
-    // 0 consider as not valid
-    // any number other than 0 consider as valid
-    private List<Customer> getCustomersWithValidState() {
-        return customerDao.findAll().stream().filter(customer -> {
-            Country country = getCountry(customer);
-            return country != null && isCustomerPhoneNumberValid(country.getPhoneNumberRegex(), customer.getPhoneNumber());
-        }).collect(Collectors.toList());
-
-    }
-
-    // 0 consider as not valid
-    // any number other than 0 consider as valid
-    private List<Customer> getCustomersWithNotValidState() {
-        return customerDao.findAll().stream().filter(customer -> {
-            Country country = getCountry(customer);
-            //in case  country is null due to wrong phone number of customer
-            return country == null || isCustomerPhoneNumberNotValid(country.getPhoneNumberRegex(), customer.getPhoneNumber());
-
-        }).collect(Collectors.toList());
-
-    }
-
-    private Country getCountry(Customer customer) {
-        String customerCountryCodeNumber = CountryCode.getCountryCodeNumber(customer.getPhoneNumber());
-        return CountryCode.getCountry(customerCountryCodeNumber);
-    }
-
-
-    //here we check for all customers that their country code is match the selected countryPhoneRegex
-    // (237) match \(237\)\
-    private List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
-        return customers.stream().filter(customer -> isCustomerMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
-
-    }
-
-    private Boolean isCustomerPhoneNumberValid(String phoneNumberRegex, String phoneNumber) {
-        return isCustomerMatchingRegex(phoneNumberRegex, phoneNumber);
-    }
-
-    private Boolean isCustomerPhoneNumberNotValid(String phoneNumberRegex, String phoneNumber) {
-        return !isCustomerMatchingRegex(phoneNumberRegex, phoneNumber);
-    }
-
-
-    private Boolean isCustomerMatchingRegex(String countryCodeRegex, String customerCountryCodeNumber) {
-        Pattern pattern = Pattern.compile(countryCodeRegex);
-        Matcher matcher = pattern.matcher(customerCountryCodeNumber);
-        return matcher.matches();
     }
 
 

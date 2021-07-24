@@ -2,8 +2,8 @@ package com.jumia.SQLite.springboot.entity;
 
 
 public class Country {
-    private String phoneRegex;
-    private String name;
+    private final String phoneRegex;
+    private final String name;
     public Country(String name,String phoneRegex) {
         this.phoneRegex = phoneRegex;
         this.name=name;
@@ -26,11 +26,7 @@ public class Country {
     }
 }
 /*
-
- */
-/**
  * enum class represent the country's regex and code
- *//*
 
 public enum CountryPhoneRegex {
     Cameroon("\\(237\\) ?[2368]\\d{7,8}$"),

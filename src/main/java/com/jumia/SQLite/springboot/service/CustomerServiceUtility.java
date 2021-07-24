@@ -1,6 +1,5 @@
 package com.jumia.SQLite.springboot.service;
 
-import com.jumia.SQLite.springboot.entity.Country;
 import com.jumia.SQLite.springboot.entity.CountryCode;
 import com.jumia.SQLite.springboot.entity.Customer;
 import com.jumia.SQLite.springboot.entity.State;
@@ -68,10 +67,6 @@ public class CustomerServiceUtility {
         return CountryCode.isNotExist(customer.getCountryCodeNumber()) || isCustomerPhoneNumberNotValid(CountryCode.getCountry(customer.getCountryCodeNumber()).getPhoneRegex(), customer.getPhoneNumber());
     }
 
-
-    private static Country getCountry(Customer customer) {
-        return CountryCode.getCountry(customer.getCountryCodeNumber());
-    }
 
     private static Boolean isCustomerPhoneNumberValid(String phoneNumberRegex, String phoneNumber) {
         return isMatchingRegex(phoneNumberRegex, phoneNumber);

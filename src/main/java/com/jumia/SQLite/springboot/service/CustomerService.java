@@ -1,7 +1,5 @@
 package com.jumia.SQLite.springboot.service;
 
-import com.jumia.SQLite.springboot.entity.Country;
-import com.jumia.SQLite.springboot.entity.CountryCode;
 import com.jumia.SQLite.springboot.entity.Customer;
 import com.jumia.SQLite.springboot.repository.CustomerDao;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,8 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-import static com.jumia.SQLite.springboot.service.CustomerServiceUtility.*;
+import static com.jumia.SQLite.springboot.service.CustomerServiceUtility.getCustomersWithSameCountryCode;
+import static com.jumia.SQLite.springboot.service.CustomerServiceUtility.getCustomersWithValidNotValidState;
 
 @Service
 public class CustomerService {
@@ -27,10 +26,7 @@ public class CustomerService {
     //second we filter all number that match the country code number regex
     public List<Customer> getFilteredCustomers(String countryCode, int state) {
         List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(customerDao.findAll(), state);
-        Country country = CountryCode.getCountry(countryCode);
-        //for case if user enter invalid code number we just return All  customers that match the state.
-        if (isNotValidCountry(country)) return customersMatchTheState;
-        return getCustomersWithSameCountryCode(customersMatchTheState, country.getCountryCodeRegex());
+        return getCustomersWithSameCountryCode(customersMatchTheState, countryCode);
 
     }
 

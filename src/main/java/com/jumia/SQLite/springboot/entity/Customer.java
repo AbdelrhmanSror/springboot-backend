@@ -45,10 +45,17 @@ public class Customer {
     }
 
     public String getCountry() {
-        country = CountryCode.getCountry(CountryCode.getCountryCodeNumber(phoneNumber)).name();
+        country = CountryCode.getCountry(getCountryCodeNumber()).getName();
         return country;
     }
 
+    public String getCountryCodeNumber() {
+        try {
+            return phoneNumber.substring(1, 4);
+        } catch (IndexOutOfBoundsException exception) {
+            return null;
+        }
+    }
 
     @Override
     public String toString() {

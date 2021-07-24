@@ -1,7 +1,5 @@
 package com.jumia.SQLite.springboot;
 
-import com.jumia.SQLite.springboot.entity.Country;
-import com.jumia.SQLite.springboot.entity.CountryCode;
 import com.jumia.SQLite.springboot.entity.Customer;
 import com.jumia.SQLite.springboot.entity.State;
 import com.jumia.SQLite.springboot.repository.CustomerDao;
@@ -41,11 +39,8 @@ public class CustomerServiceTests {
     //second we filter all number that match the country code number regex
     @Test
     public void getFilteredCustomerUsingPhoneNumber() {
-        List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(customerDao.findAll(), State.VALID);
-        Country country = CountryCode.getCountry("5");
-        if (country == null) testReadCustomers();
-        else
-            assertAndPrint(getCustomersWithSameCountryCode(customersMatchTheState, CountryCode.getCountry("5").getCountryCodeRegex()));
+        List<Customer> customersMatchTheState = getCustomersWithValidNotValidState(customerDao.findAll(), State.NOT_VALID);
+        assertAndPrint(getCustomersWithSameCountryCode(customersMatchTheState, "237"));
 
     }
 

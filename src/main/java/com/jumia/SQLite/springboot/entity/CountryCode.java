@@ -2,6 +2,13 @@ package com.jumia.SQLite.springboot.entity;
 
 import java.util.HashMap;
 
+/**
+ * Cameroon("\\(237\\) ?[2368]\\d{7,8}$"),
+ * Ethiopia("\\(251\\) ?[1-59]\\d{8}$"),
+ * Morocco("\\(212\\) ?[5-9]\\d{8}$"),
+ * Mozambique("\\(258\\) ?[28]\\d{7,8}$"),
+ * Uganda("\\(256\\) ?\\d{9}$");
+ */
 public class CountryCode {
     private static final String CAMEROON = "237";
     private static final String ETHIOPIA = "251";
@@ -9,31 +16,26 @@ public class CountryCode {
     private static final String MOZAMBIQUE = "258";
     private static final String UGANDA = "256";
 
-    private static final HashMap<String, Country> countryCodeToPhoneRegex = new HashMap<String, Country>() {{
-        put(CAMEROON, Country.Cameroon);
-        put(ETHIOPIA, Country.Ethiopia);
-        put(MOROCCO, Country.Morocco);
-        put(MOZAMBIQUE, Country.Mozambique);
-        put(UGANDA, Country.Uganda);
+    private static final HashMap<String, Country> countryCodeToCountry = new HashMap<>() {{
+        put(CAMEROON, new Country("CAMEROON", "\\(237\\) ?[2368]\\d{7,8}$"));
+        put(ETHIOPIA, new Country("ETHIOPIA", "\\(251\\) ?[1-59]\\d{8}$"));
+        put(MOROCCO, new Country("MOROCCO", "\\(212\\) ?[5-9]\\d{8}$"));
+        put(MOZAMBIQUE, new Country("MOZAMBIQUE", "\\(258\\) ?[28]\\d{7,8}$"));
+        put(UGANDA, new Country("UGANDA", "\\(256\\) ?\\d{9}$"));
     }};
 
 
-    public static Country getCountry(String countryCode) {
-        return countryCodeToPhoneRegex.getOrDefault(countryCode, null);
+    public static Boolean isExist(String countryCode) {
+        return countryCodeToCountry.containsKey(countryCode);
     }
 
-    public static String getCountryCodeNumber(String phoneNumber) {
-        try {
-            return phoneNumber.substring(1, 4);
-        } catch (IndexOutOfBoundsException exception) {
-            return null;
-        }
+    public static Boolean isNotExist(String countryCode) {
+        return !countryCodeToCountry.containsKey(countryCode);
     }
-    public static String getCountryCodeNumberRegex(String phoneNumberRegex) {
-        try {
-            return phoneNumberRegex.substring(2, 5);
-        } catch (IndexOutOfBoundsException exception) {
-            return null;
-        }
+
+    public static Country getCountry(String countryCode) {
+        return countryCodeToCountry.getOrDefault(countryCode, null);
     }
+
+
 }

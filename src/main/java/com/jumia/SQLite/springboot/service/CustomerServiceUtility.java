@@ -24,48 +24,53 @@ public class CustomerServiceUtility {
 
     }
 
-
-    //here we check for all customers that their country code is match the selected countryPhoneRegex
-    // (237) match \(237\)\
-    public static List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCodeRegex) {
-        return customers.stream().filter(customer -> isMatchingRegex(countryCodeRegex, CountryCode.getCountryCodeNumber(customer.getPhoneNumber()))).collect(Collectors.toList());
+    /**
+     * here we check for all customers that their country code is match the selected countryCode
+     * (237) match \(237\)\
+     *
+     * @param customers   to filter based on the given  countryCode
+     * @param countryCode to filter customers based on it
+     * @return countryCode based  filtered customers
+     */
+    public static List<Customer> getCustomersWithSameCountryCode(List<Customer> customers, String countryCode) {
+        //for case if user enter invalid code number we just return All  customers that match the state.
+        if (CountryCode.isNotExist(countryCode)) return customers;
+        return customers.stream().filter(customer -> isMatchingRegex(getCountryCodeNumberRegex(countryCode), customer.getCountryCodeNumber())).collect(Collectors.toList());
 
     }
+
+    private static String getCountryCodeNumberRegex(String countryCodeNumber) {
+        return CountryCode.getCountry(countryCodeNumber).getCodeRegex();
+    }
+
 
     // 0 consider as not valid
     // any number other than 0 consider as valid
     private static List<Customer> getCustomersWithValidState(List<Customer> customers) {
-        return customers.stream().filter(customer -> {
-            Country country = getCountry(customer);
-            return isValidCountry(country) && isCustomerPhoneNumberValid(country.getPhoneNumberRegex(), customer.getPhoneNumber());
-        }).collect(Collectors.toList());
+        return customers.stream().filter(CustomerServiceUtility::isCustomerValid).collect(Collectors.toList());
 
     }
 
     // 0 consider as not valid
     // any number other than 0 consider as valid
     private static List<Customer> getCustomersWithNotValidState(List<Customer> customers) {
-        return customers.stream().filter(customer -> {
-            Country country = getCountry(customer);
-            //in case  country is null due to wrong phone number of customer
-            return isNotValidCountry(country) || isCustomerPhoneNumberNotValid(country.getPhoneNumberRegex(), customer.getPhoneNumber());
-
-        }).collect(Collectors.toList());
+        //in case  country is null due to wrong phone number of customer
+        return customers.stream().filter(CustomerServiceUtility::isCustomerNotValid).collect(Collectors.toList());
 
     }
 
-    public static boolean isNotValidCountry(Country country) {
-        return country == null;
+    private static boolean isCustomerValid(Customer customer) {
+        return CountryCode.isExist(customer.getCountryCodeNumber()) && isCustomerPhoneNumberValid(CountryCode.getCountry(customer.getCountryCodeNumber()).getPhoneRegex(), customer.getPhoneNumber());
     }
 
-    private static boolean isValidCountry(Country country) {
-        return country != null;
+
+    private static boolean isCustomerNotValid(Customer customer) {
+        return CountryCode.isNotExist(customer.getCountryCodeNumber()) || isCustomerPhoneNumberNotValid(CountryCode.getCountry(customer.getCountryCodeNumber()).getPhoneRegex(), customer.getPhoneNumber());
     }
 
 
     private static Country getCountry(Customer customer) {
-        String customerCountryCodeNumber = CountryCode.getCountryCodeNumber(customer.getPhoneNumber());
-        return CountryCode.getCountry(customerCountryCodeNumber);
+        return CountryCode.getCountry(customer.getCountryCodeNumber());
     }
 
     private static Boolean isCustomerPhoneNumberValid(String phoneNumberRegex, String phoneNumber) {

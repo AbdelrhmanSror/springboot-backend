@@ -1,4 +1,4 @@
-package com.jumia.SQLite.springboot;
+package com.jumia.SQLite.springboot.viewmodel;
 
 
 import org.junit.jupiter.api.Test;

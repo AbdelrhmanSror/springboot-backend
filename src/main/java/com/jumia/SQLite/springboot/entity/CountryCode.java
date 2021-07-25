@@ -10,24 +10,32 @@ import java.util.HashMap;
  * Uganda("\\(256\\) ?\\d{9}$");
  */
 public class CountryCode {
-    private static final String CAMEROON = "237";
-    private static final String ETHIOPIA = "251";
-    private static final String MOROCCO = "212";
-    private static final String MOZAMBIQUE = "258";
-    private static final String UGANDA = "256";
-    private static final String CAMEROON_REGEX = "\\(237\\) ?[2368]\\d{7,8}$";
-    private static final String ETHIOPIA_REGEX = "\\(251\\) ?[1-59]\\d{8}$";
-    private static final String MOROCCO_REGEX = "\\(212\\) ?[5-9]\\d{8}$";
-    private static final String MOZAMBIQUE_REGEX = "\\(258\\) ?[28]\\d{7,8}$";
-    private static final String UGANDA_REGEX = "\\(256\\) ?\\d{9}$";
+    public static final String CAMEROON_CODE = "237";
+    public static final String ETHIOPIA_CODE = "251";
+    public static final String MOROCCO_CODE = "212";
+    public static final String MOZAMBIQUE_CODE = "258";
+    public static final String UGANDA_CODE = "256";
+
+    public static final String Cameroon = "CAMEROON";
+    public static final String Ethiopia = "ETHIOPIA";
+    public static final String Morocco = "MOROCCO";
+    public static final String Mozambique = "MOZAMBIQUE";
+    public static final String Uganda = "UGANDA";
+
+
+    public static final String CAMEROON_REGEX = "\\(237\\) ?[2368]\\d{7,8}$";
+    public static final String ETHIOPIA_REGEX = "\\(251\\) ?[1-59]\\d{8}$";
+    public static final String MOROCCO_REGEX = "\\(212\\) ?[5-9]\\d{8}$";
+    public static final String MOZAMBIQUE_REGEX = "\\(258\\) ?[28]\\d{7,8}$";
+    public static final String UGANDA_REGEX = "\\(256\\) ?\\d{9}$";
 
 
     private static final HashMap<String, Country> countryCodeToCountry = new HashMap<>() {{
-        put(CAMEROON, new Country("CAMEROON", CAMEROON_REGEX));
-        put(ETHIOPIA, new Country("ETHIOPIA", ETHIOPIA_REGEX));
-        put(MOROCCO, new Country("MOROCCO", MOROCCO_REGEX));
-        put(MOZAMBIQUE, new Country("MOZAMBIQUE", MOZAMBIQUE_REGEX));
-        put(UGANDA, new Country("UGANDA", UGANDA_REGEX));
+        put(CAMEROON_CODE, new Country(Cameroon, CAMEROON_REGEX));
+        put(ETHIOPIA_CODE, new Country(Ethiopia, ETHIOPIA_REGEX));
+        put(MOROCCO_CODE, new Country(Morocco, MOROCCO_REGEX));
+        put(MOZAMBIQUE_CODE, new Country(Mozambique, MOZAMBIQUE_REGEX));
+        put(UGANDA_CODE, new Country(Uganda, UGANDA_REGEX));
     }};
 
 

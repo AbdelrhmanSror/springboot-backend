@@ -1,4 +1,4 @@
-package com.jumia.SQLite.springboot;
+package com.jumia.SQLite.springboot.service;
 
 import com.jumia.SQLite.springboot.entity.Customer;
 import com.jumia.SQLite.springboot.entity.State;

@@ -24,4 +24,12 @@ public class Country {
     public String getPhoneRegex() {
         return phoneRegex;
     }
+
+    @Override
+    public String toString() {
+        return "Country{" +
+                "phoneRegex='" + phoneRegex + '\'' +
+                ", name='" + name + '\'' +
+                '}';
+    }
 }

@@ -63,10 +63,6 @@ https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e
 # Connect to the Internet -Front End Part
 
 
- ## Screenshots
-
-![Screenshot 1](springboot-react-frontend/screenshots/Capture.JPG)
-![Screenshot 2](springboot-react-frontend/screenshots/Capture1.JPG)
 
 ## How to boot up this application  
 In the project directory, you can run:
@@ -107,6 +103,14 @@ https://hub.docker.com/repository/docker/sror12347/springbootreactfrontend
    docker run -p 3000:3000 sror12347/springbootreactfrontend
   
 ![Screenshot 1](springboot-react-frontend/screenshots/docker2.JPG)
+
+
+
+ ## Screenshots
+
+![Screenshot 1](springboot-react-frontend/screenshots/Capture.JPG)
+![Screenshot 2](springboot-react-frontend/screenshots/Capture1.JPG)
+
 
 
 ### ENJOY

@@ -1,7 +1,7 @@
 package com.jumia.SQLite.springboot.service;
 
-import com.jumia.SQLite.springboot.entity.Customer;
-import com.jumia.SQLite.springboot.entity.State;
+import com.jumia.SQLite.springboot.models.Customer;
+import com.jumia.SQLite.springboot.models.State;
 import com.jumia.SQLite.springboot.repository.CustomerDao;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;

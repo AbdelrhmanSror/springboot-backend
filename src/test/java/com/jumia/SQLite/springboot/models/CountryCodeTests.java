@@ -1,4 +1,4 @@
-package com.jumia.SQLite.springboot.entity;
+package com.jumia.SQLite.springboot.models;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;

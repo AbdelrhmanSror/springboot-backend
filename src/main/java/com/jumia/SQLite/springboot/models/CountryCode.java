@@ -1,4 +1,4 @@
-package com.jumia.SQLite.springboot.entity;
+package com.jumia.SQLite.springboot.models;
 
 import java.util.HashMap;
 

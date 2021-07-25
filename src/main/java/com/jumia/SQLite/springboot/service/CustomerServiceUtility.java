@@ -1,8 +1,8 @@
 package com.jumia.SQLite.springboot.service;
 
-import com.jumia.SQLite.springboot.entity.CountryCode;
-import com.jumia.SQLite.springboot.entity.Customer;
-import com.jumia.SQLite.springboot.entity.State;
+import com.jumia.SQLite.springboot.models.CountryCode;
+import com.jumia.SQLite.springboot.models.Customer;
+import com.jumia.SQLite.springboot.models.State;
 
 import java.util.List;
 import java.util.regex.Matcher;

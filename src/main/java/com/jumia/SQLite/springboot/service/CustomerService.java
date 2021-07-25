@@ -1,6 +1,6 @@
 package com.jumia.SQLite.springboot.service;
 
-import com.jumia.SQLite.springboot.entity.Customer;
+import com.jumia.SQLite.springboot.models.Customer;
 import com.jumia.SQLite.springboot.repository.CustomerDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
 package com.jumia.SQLite.springboot.viewmodel;
 
-import com.jumia.SQLite.springboot.entity.Customer;
+import com.jumia.SQLite.springboot.models.Customer;
 import com.jumia.SQLite.springboot.service.CustomerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

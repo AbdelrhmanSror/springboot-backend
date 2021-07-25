@@ -15,13 +15,19 @@ public class CountryCode {
     private static final String MOROCCO = "212";
     private static final String MOZAMBIQUE = "258";
     private static final String UGANDA = "256";
+    private static final String CAMEROON_REGEX = "\\(237\\) ?[2368]\\d{7,8}$";
+    private static final String ETHIOPIA_REGEX = "\\(251\\) ?[1-59]\\d{8}$";
+    private static final String MOROCCO_REGEX = "\\(212\\) ?[5-9]\\d{8}$";
+    private static final String MOZAMBIQUE_REGEX = "\\(258\\) ?[28]\\d{7,8}$";
+    private static final String UGANDA_REGEX = "\\(256\\) ?\\d{9}$";
+
 
     private static final HashMap<String, Country> countryCodeToCountry = new HashMap<>() {{
-        put(CAMEROON, new Country("CAMEROON", "\\(237\\) ?[2368]\\d{7,8}$"));
-        put(ETHIOPIA, new Country("ETHIOPIA", "\\(251\\) ?[1-59]\\d{8}$"));
-        put(MOROCCO, new Country("MOROCCO", "\\(212\\) ?[5-9]\\d{8}$"));
-        put(MOZAMBIQUE, new Country("MOZAMBIQUE", "\\(258\\) ?[28]\\d{7,8}$"));
-        put(UGANDA, new Country("UGANDA", "\\(256\\) ?\\d{9}$"));
+        put(CAMEROON, new Country("CAMEROON", CAMEROON_REGEX));
+        put(ETHIOPIA, new Country("ETHIOPIA", ETHIOPIA_REGEX));
+        put(MOROCCO, new Country("MOROCCO", MOROCCO_REGEX));
+        put(MOZAMBIQUE, new Country("MOZAMBIQUE", MOZAMBIQUE_REGEX));
+        put(UGANDA, new Country("UGANDA", UGANDA_REGEX));
     }};
 
 

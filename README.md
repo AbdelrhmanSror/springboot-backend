@@ -1,117 +1,52 @@
 # Customer Springboot Application
 
-* Customer back end application using springboot building RESTful Web Services that we can contact with using API and  front end applications.
-* Customer back end plays the whole role starting from loading the database and run filtration on it based state of the phone number and countryPhoneRegex which is from.
+This project is a customer management system that consists of a back-end application built with Spring Boot and a front-end application built with React. The back-end application provides RESTful web services that allow users to manage customer data, such as phone number and country, while the front-end application provides a user-friendly interface to interact with the back-end application.
 
-# Connect to the Internet -Back End Part
+## Back-End Part
 
- It leverages the following components :
+The back-end application is responsible for loading the database and running filtration based on the state of the phone number and countryPhoneRegex. It leverages the following components:
 
 * [Spring Framework](https://spring.io/projects/spring-framework)
 * [Java util Regex](https://docs.oracle.com/javase/7/docs/api/java/util/regex/package-summary.html)
 
- 
- ## Screenshots
+### Screenshots
 
 ![Screenshot 1](screenshots/spring_app_run.JPG)
 ![Screenshot 2](screenshots/running_1.JPG)
 ![Screenshot 3](screenshots/running_2.JPG)
 
+### How to run the application
 
+To run the back-end application, follow these steps:
 
+1. Load the file on IntelliJ IDE or any preferred IDE.
+2. Run the application.
 
+To run the back-end application using Docker, follow these steps:
 
- 
-## How to boot up this application  
-* load the file on Inteliji IDE  or any prefered IDE .
+1. Build the Docker image: `docker build -t 8090:8090 customer-sql-springboot:v1`.
+2. Run the Docker container: `docker run -p 8090:8090 customer-sql-springboot:v1`.
 
-https://github.com/AbdelrhmanSror/springboot-backend/blob/8e78bed0b92a6cd267679e286b7c6d92d10433a5/src/main/java/com/jumia/SQLite/springboot/SpringBootAndSqLiteApplication.java
+## Front-End Part
 
-* run the application
+The front-end application is responsible for providing a user-friendly interface to interact with the back-end application. It was built using React and communicates with the back-end application using RESTful API calls.
 
-# running docker file
-
-## link of the project on dockerHub.
-  https://hub.docker.com/repository/docker/sror12347/customer-sql-springboot .
-  
-### command to run docker file.
-* if you are going to run the docker file map it to port 8090.
-
-* build .
-   
-   docker build -t 8090:8090 customer-sql-springboot:v1 .
-
-* run it.
-  
-   docker run -p 8090:8090 customer-sql-springboot:v1
-  
- ### Running on docker Desktop.
-  
- * pull the repo from docker hub.
-
-   docker pull sror12347/customer-sql-springboot:v1
-  
- * run it.
- 
-   docker run -p 8090:8090 sror12347/customer-sql-springboot:v1
-
-  
-![Screenshot 1](springboot-react-frontend/screenshots/docker1.JPG)
-
-
-
-# Connect to the Internet -Front End Part
-
-
-
-## How to boot up this application  
-In the project directory, you can run:
-### npm install
-then
-### `npm run start`
-
-* Runs the app in the development mode.
-* Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-* The page will reload if you make edits.
-* run the application.
-
-# running docker file
-
-## link of the project on dockerHub.
-
-https://hub.docker.com/repository/docker/sror12347/springbootreactfrontend 
-
-### command to run docker file.
-* if you are going to run the docker file map it to port 3000
-* build.
- 
-  docker build -t 3000:3000 springbootreactfrontend .
-
-* run it.
- 
-  docker run -p 3000:3000 springbootreactfrontend
-
-  
- ### Running on docker Desktop.
- * pull the repo from docker hub.
-
-   docker pull sror12347/springbootreactfrontend
-   
-* run it .
-
-   docker run -p 3000:3000 sror12347/springbootreactfrontend
-  
-![Screenshot 1](springboot-react-frontend/screenshots/docker2.JPG)
-
-
-
- ## Screenshots
+### Screenshots
 
 ![Screenshot 1](springboot-react-frontend/screenshots/Capture.JPG)
 ![Screenshot 2](springboot-react-frontend/screenshots/Capture1.JPG)
 
+### How to run the application
 
+To run the front-end application, follow these steps:
 
-### ENJOY
+1. Install the dependencies: `npm install`.
+2. Start the development server: `npm run start`.
+3. Open [http://localhost:3000](http://localhost:3000) to view the application in the browser.
 
+To run the front-end application using Docker, follow these steps:
+
+1. Build the Docker image: `docker build -t 3000:3000 springbootreactfrontend`.
+2. Run the Docker container: `docker run -p 3000:3000 springbootreactfrontend`.
+
+Enjoy using the Customer Springboot Application!
